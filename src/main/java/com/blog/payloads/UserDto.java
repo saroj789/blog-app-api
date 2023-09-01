@@ -1,8 +1,9 @@
 package com.blog.payloads;
 
 
+import java.util.HashSet;
 import java.util.List;
-
+import java.util.Set;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -30,6 +31,8 @@ public class UserDto {
 	@NotEmpty
 	@Size(min = 4, max = 8, message = "password must be min of 4 char and max of 4 char !!")
 	private String password;
+	
+	private Set<RoleDto> roles = new HashSet<>();
 	
 	//private List<PostDto> posts;
 	//private List<CommentDto> comments;

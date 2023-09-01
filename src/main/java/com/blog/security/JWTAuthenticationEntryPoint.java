@@ -2,6 +2,7 @@ package com.blog.security;
 
 import java.io.IOException;
 
+import org.apache.catalina.filters.ExpiresFilter.XServletOutputStream;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
@@ -19,6 +20,8 @@ public class JWTAuthenticationEntryPoint implements AuthenticationEntryPoint {
 	@Override
 	public void commence(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException authException) throws IOException, ServletException {
+		System.out.println("JWTAuthenticationEntryPoint called");
+		authException.printStackTrace();
 		response.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Access Denied !!");
 		
 	}

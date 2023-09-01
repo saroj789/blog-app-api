@@ -53,7 +53,7 @@ public class User implements UserDetails {
 	@OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
 	private List<Comment> comments = new ArrayList<>();
 
-	@ManyToMany(targetEntity = Role.class,cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+	@ManyToMany(targetEntity = Role.class,fetch = FetchType.EAGER)  //removed cascade all because it was trying to delete role also
 	@JoinTable(name = "user_role",
 		joinColumns = @JoinColumn(name="user",referencedColumnName = "user_id"),
 		inverseJoinColumns = @JoinColumn(name="role",referencedColumnName = "role_id")
