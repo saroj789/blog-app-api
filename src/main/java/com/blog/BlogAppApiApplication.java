@@ -41,11 +41,11 @@ public class BlogAppApiApplication implements CommandLineRunner {
 		try {
 			Role r1 = new Role();
 			r1.setId(AppConstants.ADMIN_USER);
-			r1.setName("ADMIN_USER");
+			r1.setName("ROLE_ADMIN_USER");
 			
 			Role r2 = new Role();
 			r2.setId(AppConstants.NORMAL_USER);
-			r2.setName("NORMAL_USER");
+			r2.setName("ROLE_NORMAL_USER");
 			
 			List<Role> roles = List.of(r1,r2);
 			

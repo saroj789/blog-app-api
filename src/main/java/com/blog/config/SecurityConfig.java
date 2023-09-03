@@ -31,35 +31,16 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 
 
-
 @Configuration
 @EnableMethodSecurity   //for role based
 @EnableWebMvc           //swagger
-@OpenAPIDefinition(        // also we can crea swaggerconfig class to customize swagger ui
-		info = @Info(
-				title   = "blog-app-api",
-				version = "1",
-				description = "API for blogging app",
-				termsOfService = "t & c",
-				contact = @Contact(
-						email = "blogappapi@gmail.com",
-						name = "blogappapi"
-						//extensions =""
-						),
-				license = @License(
-						name = "blogappapi",
-						url = "blogappapi"
-						//extensions = ""
-						)
-				)
-		)
 public class SecurityConfig {
 	
 	public static final String[] PUBLIC_URLS = {
 			"/api/v1/auth/**",
 			"/v3/api-docs",
 			"/swagger-ui/**",
-			"/v3/api-docs/**"   //swageer ui was not loadings
+			"/v3/api-docs/**"   //Swagger ui was not loadings
 	};
 	                                   
 	
@@ -116,6 +97,27 @@ public class SecurityConfig {
 		 return authenticationProvider;	 
 	 }
 	 */
+	
+	
+	// if don't want to create  swaggerconfig class we can use this annotation
+	/*@OpenAPIDefinition(
+	info = @Info(
+			title   = "blog-app-api",
+			version = "1",
+			description = "API for blogging app",
+			termsOfService = "t & c",
+			contact = @Contact(
+					email = "blogappapi@gmail.com",
+					name = "blogappapi"
+					//extensions =""
+					),
+			license = @License(
+					name = "blogappapi",
+					url = "blogappapi"
+					//extensions = ""
+					)
+			)
+	)*/
 	
 	
 	
